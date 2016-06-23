@@ -1,11 +1,8 @@
-pcp-client
-==========
+# pcp-client
 
 This library provides a client library for the [Puppet Communications Protocol](https://github.com/puppetlabs/pcp-specifications) wire protocol.
 
-
-Basic Usage
-==========
+## Basic Usage
 
 ```sh
 gem install pcp-client
@@ -75,16 +72,20 @@ There's a more extended example of this which makes more use of
 PCP/PXP features in bin/pcp-ping.
 
 
-Testing
-=======
+## Testing
 
 ```sh
 bundle install
 bundle exec rspec spec
 ```
 
-Support
-=======
 
-To report issues please use the [Puppet Communications Protocol project on
-JIRA](https://tickets.puppetlabs.com/browse/PCP) with the component `ruby-pcp-client`.
+## Maintenance
+
+Maintainers: Alessandro Parisi <alessandro@puppet.com>, Michael Smith
+<michael.smith@puppet.com>, Michal Ruzicka <michal.ruzicka@puppet.com>.
+
+Contributing: Please refer to [this](CONTRIBUTING.md) document.
+
+Tickets: File bug tickets at https://tickets.puppet.com/browse/PCP and add the
+`ruby-pcp-client` component to the ticket.
