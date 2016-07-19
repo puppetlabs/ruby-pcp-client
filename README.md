@@ -19,7 +19,8 @@ Thread.pass until EM.reactor_running?
 
 client = PCP::Client.new({:server => 'wss://localhost:8142/pcp',
                           :ssl_key => 'test-resources/ssl/private_keys/client01.example.com.pem',
-                          :ssl_cert => 'test-resources/ssl/certs/client01.example.com.pem'})
+                          :ssl_cert => 'test-resources/ssl/certs/client01.example.com.pem',
+                          :ssl_ca_cert => 'test-resources/ssl/ca/ca_crt.pem'})
 
 client.on_message = proc do |message|
   puts "Get message: #{message.inspect}"
@@ -49,6 +50,7 @@ Thread.pass until EM.reactor_running?
 client = PCP::Client.new({:server => 'wss://localhost:8142/pcp',
                           :ssl_key => 'test-resources/ssl/private_keys/client02.example.com.pem',
                           :ssl_cert => 'test-resources/ssl/certs/client02.example.com.pem',
+                          :ssl_ca_cert => 'test-resources/ssl/ca/ca_crt.pem',
                           :type => 'example-agent'})
 
 # Set up on_message handler
