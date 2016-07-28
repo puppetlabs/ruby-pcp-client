@@ -114,7 +114,7 @@ module PCP
           :xxx_hostname => URI.parse(@server).host,
         }
 
-        @connection = Faye::WebSocket::Client.new(@server, nil, {:tls => start_tls_options})
+        @connection = Faye::WebSocket::Client.new(@server, nil, {:tls => start_tls_options, :ping => 30})
 
         @connection.on :open do |event|
           begin
