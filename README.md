@@ -31,6 +31,7 @@ client.connect
 message = PCP::Message.new({:message_type => 'example/ping',
                             :targets => ['pcp://*/example-agent']})
 
+message.expires(3)
 client.send(message)
 
 # Hang around and see what responses we get back
@@ -59,6 +60,8 @@ client.on_message = proc do |message|
   if message[:message_type] == 'example/ping'
     response = PCP::Message.new({:message_type => 'example/pong',
                                  :targets => [message[:sender]]})
+                                 
+    response.expires(3)
     client.send(response)
   end
 end
