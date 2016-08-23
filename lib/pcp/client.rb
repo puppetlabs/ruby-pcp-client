@@ -205,6 +205,9 @@ module PCP
     def send(message)
       EM.next_tick do
         @logger.debug { [:send, message] }
+        if message[:expires].nil?
+          message.expires(3)
+        end
         message[:sender] = identity
         @connection.send(message.encode)
       end

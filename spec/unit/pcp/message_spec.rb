@@ -104,4 +104,14 @@ RSpec.describe PCP::Message do
                              3, 0, 0, 0, 0])
     end
   end
+
+  context '#validate' do
+    it 'validates the data in the message' do
+      message = described_class.new
+      message.data = 'test'
+      allow(message).to receive(:envelope).and_return({}).twice
+      expect(RSchema).to receive(:validate!).with(PCP::Protocol::Envelope, {})
+      message.validate
+    end
+  end
 end

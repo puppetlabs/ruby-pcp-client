@@ -111,9 +111,17 @@ module PCP
         chunks << frame_chunk(i + 2, @chunks[i])
       end
 
-      RSchema.validate!(PCP::Protocol::Envelope, envelope)
+      validate
 
       [1, frame_chunk(1, envelope.to_json), chunks].flatten
+    end
+
+    # Validate the data in message against schema
+    #
+    # @api public
+    # @return ignore
+    def validate
+      RSchema.validate!(PCP::Protocol::Envelope, envelope)
     end
 
     private
@@ -144,7 +152,7 @@ module PCP
           parsed.each do |k,v|
             @envelope[k.to_sym] = v
           end
-          RSchema.validate!(PCP::Protocol::Envelope, @envelope)
+          validate
         else
           @chunks[type - 2] = body
         end
