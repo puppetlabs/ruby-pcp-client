@@ -76,6 +76,14 @@ loop do end
 There's a more extended example of this which makes more use of
 PCP/PXP features in bin/pcp-ping.
 
+## Options
+
+`PCP::Client` takes several additional options:
+
+* `logger` - specify a logging target extending the Logger class
+* `loglevel` - specify one of the levels supported by the Logger class
+* `on_message` - specify an `on_message` handler during construction
+* `max_message_size` - change the limit on maximum incoming message size (defaults to 64MiB)
 
 ## Testing
 

@@ -80,6 +80,7 @@ module PCP
       type = params[:type] || "ruby-pcp-client-#{$$}"
       @identity = make_identity(@ssl_cert, type)
       @on_message = params[:on_message]
+      @max_message_size = params[:max_message_size] || 64*1024*1024
       @associated = false
     end
 
@@ -114,7 +115,9 @@ module PCP
           :xxx_hostname => URI.parse(@server).host,
         }
 
-        @connection = Faye::WebSocket::Client.new(@server, nil, {:tls => start_tls_options, :ping => 30})
+        @connection = Faye::WebSocket::Client.new(@server, nil, {:tls => start_tls_options,
+                                                                 :ping => 30,
+                                                                 :max_length => @max_message_size})
 
         @connection.on :open do |event|
           begin
