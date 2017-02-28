@@ -7,6 +7,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/puppetlabs/ruby-pcp-client'
   s.authors     = ["Puppet Labs"]
   s.email       = "puppet@puppetlabs.com"
+  s.executables = ["pcp-ping"]
   s.files       = Dir["lib/**/*.rb"]
   s.add_runtime_dependency 'eventmachine', '~> 1.2'
   s.add_runtime_dependency 'faye-websocket', '~> 0.10'
