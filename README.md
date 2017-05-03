@@ -1,6 +1,8 @@
-# pcp-client
+# pcp-client (unmaintained)
 
-This library provides a client library for the [Puppet Communications Protocol](https://github.com/puppetlabs/pcp-specifications) wire protocol.
+This library provides a client library for the [Puppet Communications Protocol](https://github.com/puppetlabs/pcp-specifications) wire protocol version 1.
+
+The library is not expected to receive any future updates beyond those necessary for its role in testing other components. Notably it does not support PCP v2.
 
 ## Basic Usage
 
