@@ -1,3 +1,10 @@
+## 0.5.0
+
+- Add validate function to Message class, default message expiration to 3s (#21)
+- [PCP-480](https://tickets.puppetlabs.com/browse/PCP-480) Option to set
+  max message size allowed for received messages.
+- Enable websocket pings at 30s intervals (#24)
+
 ## 0.4.0
 
 - [PCP-366](https://tickets.puppetlabs.com/browse/PCP-366) New mandatory `:ssl_ca_cert`
