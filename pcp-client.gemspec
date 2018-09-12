@@ -1,6 +1,10 @@
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+
+require 'pcp-client/version'
 Gem::Specification.new do |s|
   s.name        = 'pcp-client'
-  s.version     = '0.5.0'
+  s.version     = PCPClient::VERSION
   s.licenses    = ['ASL 2.0']
   s.summary     = "Client library for PCP"
   s.description = "See https://github.com/puppetlabs/pcp-specifications"
