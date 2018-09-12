@@ -2,6 +2,7 @@ require 'eventmachine'
 require 'faye/websocket'
 require 'pcp/message'
 require 'logger'
+require 'openssl'
 
 # So EventMachine when you specify :verify_peer => true in the TLS
 # options decides what that means is it should just fire off a
