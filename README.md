@@ -97,9 +97,6 @@ bundle exec rspec spec
 
 ## Maintenance
 
-Maintainers: Alessandro Parisi <alessandro@puppet.com>, Michael Smith
-<michael.smith@puppet.com>, Michal Ruzicka <michal.ruzicka@puppet.com>.
-
 Contributing: Please refer to [this](CONTRIBUTING.md) document.
 
 Tickets: File bug tickets at https://tickets.puppet.com/browse/PCP and add the
