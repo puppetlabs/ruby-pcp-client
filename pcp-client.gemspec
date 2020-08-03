@@ -14,6 +14,6 @@ Gem::Specification.new do |s|
   s.executables = ["pcp-ping"]
   s.files       = Dir["lib/**/*.rb"]
   s.add_runtime_dependency 'eventmachine', '~> 1.2'
-  s.add_runtime_dependency 'faye-websocket', '~> 0.10'
+  s.add_runtime_dependency 'faye-websocket', '0.10.9'
   s.add_runtime_dependency 'rschema', '~> 1.3'
 end
